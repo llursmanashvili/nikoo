@@ -177,7 +177,7 @@ const dataportfolio = [
 ];
 
 const contactConfig = {
-  YOUR_EMAIL: "nika.wivilashvili888@gmail.com",
+  YOUR_EMAIL: "nikawivilashvili888@gmail.com",
   YOUR_FONE: "+995 591 22 25 34",
   description: "contact me by email or by phone",
   // creat an emailjs.com account

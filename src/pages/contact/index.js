@@ -5,6 +5,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
+import call from "react-native-phone-call/index";
 
 export const ContactUs = () => {
   const [formData, setFormdata] = useState({
@@ -63,6 +64,15 @@ export const ContactUs = () => {
       [e.target.name]: e.target.value,
     });
   };
+  const triggercall = () => {
+    const args = {
+      number: "+995 591 22 25 34", // String value with the number to call
+      prompt: false, // Optional boolean property. Determines if the user should be prompted prior to the call
+      skipCanOpen: true, // Skip the canOpenURL check
+    };
+
+    call(args).catch(console.error);
+  };
 
   return (
     <HelmetProvider>
@@ -102,7 +112,7 @@ export const ContactUs = () => {
               <br />
               <br />
               {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-                <p>
+                <p onClick={triggercall}>
                   <strong>Phone:</strong> {contactConfig.YOUR_FONE}
                 </p>
               ) : (
